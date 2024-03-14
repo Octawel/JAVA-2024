@@ -1,23 +1,17 @@
 package Homework;
-
 import java.util.Objects;
 
-abstract class Vehicle {
-    protected String id;
-    protected Depot depot;
+public abstract class Vehicle {
+    private final String plateNumber;
+    private final Depot depot;
 
-    // Constructor, Getters, Setters
-    public Vehicle(String id, Depot depot) {
-        this.id = id;
+    protected Vehicle(String plateNumber, Depot depot) {
+        this.plateNumber = plateNumber;
         this.depot = depot;
     }
 
-    public void setDepot(Depot depot) {
-        this.depot = depot;
-    }
-
-    public String getId() {
-        return id;
+    public String getPlateNumber() {
+        return plateNumber;
     }
 
     public Depot getDepot() {
@@ -29,13 +23,19 @@ abstract class Vehicle {
         if (this == o) return true;
         if (!(o instanceof Vehicle)) return false;
         Vehicle vehicle = (Vehicle) o;
-        return Objects.equals(id, vehicle.id);
+        return plateNumber.equals(vehicle.plateNumber) && depot.equals(vehicle.depot);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(plateNumber, depot);
     }
 
-    public abstract String getType();
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "{" +
+                "plateNumber='" + plateNumber + '\'' +
+                ", depot=" + depot +
+                '}';
+    }
 }

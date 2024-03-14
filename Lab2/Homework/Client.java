@@ -1,18 +1,27 @@
 package Homework;
-
 import java.util.Objects;
 
-class Client {
-    private String name;
-    private String visitingTimeInterval;
-    private ClientType type;
+public class Client {
+    private final String name;
+    private final ClientType type;
+    private final int visitingTime;
 
-    // Constructor, Getters, Setters, and toString
-
-    public Client(String name, String visitingTimeInterval, ClientType type) {
+    public Client(String name, ClientType type, int visitingTime) {
         this.name = name;
-        this.visitingTimeInterval = visitingTimeInterval;
         this.type = type;
+        this.visitingTime = visitingTime;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public ClientType getType() {
+        return type;
+    }
+
+    public int getVisitingTime() {
+        return visitingTime;
     }
 
     @Override
@@ -20,11 +29,20 @@ class Client {
         if (this == o) return true;
         if (!(o instanceof Client)) return false;
         Client client = (Client) o;
-        return Objects.equals(name, client.name);
+        return visitingTime == client.visitingTime && name.equals(client.name) && type == client.type;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(name, type, visitingTime);
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "name='" + name + '\'' +
+                ", type=" + type +
+                ", visitingTime=" + visitingTime +
+                '}';
     }
 }

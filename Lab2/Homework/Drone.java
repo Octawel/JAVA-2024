@@ -1,15 +1,14 @@
 package Homework;
 
-class Drone extends Vehicle {
-    private int maxFlightDuration;
+public class Drone extends Vehicle {
+    private final int maxFlightDuration;
 
-    public Drone(String id, Depot depot, int maxFlightDuration) {
-        super(id, depot);
+    public Drone(String plateNumber, Depot depot, int maxFlightDuration) {
+        super(plateNumber, depot);
         this.maxFlightDuration = maxFlightDuration;
     }
 
-    @Override
-    public String getType() {
-        return "Drone";
+    public int getMaxFlightDuration() {
+        return maxFlightDuration;
     }
 }

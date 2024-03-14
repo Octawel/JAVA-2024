@@ -1,49 +1,45 @@
 package Homework;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
-class Depot {
-    private String name;
-    private List<Vehicle> vehicles = new ArrayList<>();
+public class Depot {
+    private final String identifier;
+    private final Set<Vehicle> vehicles = new HashSet<>();
 
-    // Constructor, Getters, Setters, and toString
-    public Depot(String name) {
-        this.name = name;
-        this.vehicles = new ArrayList<>();
+    public Depot(String identifier) {
+        this.identifier = identifier;
     }
 
-    // Getters and setters
-    public String getName() {
-        return name;
+    public boolean addVehicle(Vehicle vehicle) {
+        return vehicles.add(vehicle);
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public Set<Vehicle> getVehicles() {
+        return new HashSet<>(vehicles);
+    }
+
+    public String getIdentifier() {
+        return identifier;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Depot)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         Depot depot = (Depot) o;
-        return Objects.equals(name, depot.name);
+        return Objects.equals(identifier, depot.identifier);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(identifier);
     }
 
-    public void addVehicle(Vehicle vehicle) {
-        if (!vehicles.contains(vehicle)) {
-            vehicles.add(vehicle);
-            vehicle.setDepot(this);
-        }
-    }
-
-    public List<Vehicle> getVehicles() {
-        return vehicles;
+    @Override
+    public String toString() {
+        return "Depot{" +
+                "identifier='" + identifier + '\'' +
+                '}';
     }
 }

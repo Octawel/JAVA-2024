@@ -1,15 +1,14 @@
 package Homework;
 
-class Truck extends Vehicle {
-    private int capacity;
+public class Truck extends Vehicle {
+    private final int capacity;
 
-    public Truck(String id, Depot depot, int capacity) {
-        super(id, depot);
+    public Truck(String plateNumber, Depot depot, int capacity) {
+        super(plateNumber, depot);
         this.capacity = capacity;
     }
 
-    @Override
-    public String getType() {
-        return "Truck";
+    public int getCapacity() {
+        return capacity;
     }
 }
