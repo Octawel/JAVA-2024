@@ -11,4 +11,3 @@ interface Visitable {
         return hours != null ? hours.getLeft() : null;
     }
 }
-

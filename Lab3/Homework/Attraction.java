@@ -17,9 +17,5 @@ abstract class Attraction implements Comparable<Attraction> {
     public String getName() {
         return name;
     }
-
-    public String getDescription() {
-        return description;
-    }
 }
 
