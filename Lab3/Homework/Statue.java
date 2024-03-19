@@ -17,7 +17,6 @@ class Statue extends Attraction implements Visitable {
         return openingHours;
     }
 
-    // If you need to add or modify opening hours
     public void addOpeningHour(LocalDate date, LocalTime start, LocalTime end) {
         openingHours.put(date, new Pair<>(start, end));
     }
