@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 public class Homework {
     public static void main(String[] args) {
-        CarpoolProblem carpoolProblem = new CarpoolProblem(30); // Generate 30 random persons
+        CarpoolProblem carpoolProblem = new CarpoolProblem(30);
 
         Set<String> destinations = carpoolProblem.computeAllDestinations();
         System.out.println("All destinations: " + destinations);

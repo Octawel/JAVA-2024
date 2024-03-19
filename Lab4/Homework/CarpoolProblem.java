@@ -41,7 +41,6 @@ public class CarpoolProblem {
     }
 
     public void solveCarpoolProblem() {
-        // Greedy algorithm to match drivers with passengers
         Map<String, List<Driver>> driversByDestination = people.stream()
                 .filter(Driver.class::isInstance)
                 .map(Driver.class::cast)
@@ -56,14 +55,13 @@ public class CarpoolProblem {
 
         for (String destination : driversByDestination.keySet()) {
             if (passengersByDestination.containsKey(destination) && !driversByDestination.get(destination).isEmpty() && !passengersByDestination.get(destination).isEmpty()) {
-                Driver driver = driversByDestination.get(destination).get(0); // Get the first driver for simplicity
-                Passenger passenger = passengersByDestination.get(destination).get(0); // Get the first passenger
+                Driver driver = driversByDestination.get(destination).get(0);
+                Passenger passenger = passengersByDestination.get(destination).get(0);
                 System.out.println("Driver " + driver.getName() + " will take Passenger " + passenger.getName() + " to " + destination);
                 matchedDestinations.add(destination);
             }
         }
 
-        // Removing matched destinations
         matchedDestinations.forEach(dest -> {
             driversByDestination.get(dest).removeIf(driver -> true);
             passengersByDestination.get(dest).removeIf(passenger -> true);
