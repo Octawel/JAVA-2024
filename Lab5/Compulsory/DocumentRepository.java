@@ -12,7 +12,7 @@ public class DocumentRepository {
     public DocumentRepository(String masterDirectory) {
         this.masterDirectoryPath = Paths.get(masterDirectory, "MasterDirectory");
         try {
-            Files.createDirectories(masterDirectoryPath); // Crează MasterDirectory dacă nu există
+            Files.createDirectories(masterDirectoryPath);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -21,7 +21,7 @@ public class DocumentRepository {
     public void addPerson(Person person) {
         Path personDirectory = masterDirectoryPath.resolve(person.id());
         try {
-            Files.createDirectories(personDirectory); // Crează directorul persoanei dacă nu există
+            Files.createDirectories(personDirectory);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -40,7 +40,6 @@ public class DocumentRepository {
             for (Path entry : stream) {
                 printEntry(entry, level);
                 if (Files.isDirectory(entry)) {
-                    // Recursiv pentru subdirectoare
                     displayDirectoryContents(entry, level + 1);
                 }
             }
@@ -48,15 +47,14 @@ public class DocumentRepository {
     }
 
     private void printEntry(Path entry, int level) {
-        // Crează un prefix bazat pe nivelul de adâncime pentru a indica ierarhia
         StringBuilder prefix = new StringBuilder();
         for (int i = 0; i < level; i++) {
             prefix.append("  ");
         }
         if (Files.isDirectory(entry)) {
-            System.out.println(prefix + "Director: " + entry.getFileName());
+            System.out.println(prefix + ">Director: " + entry.getFileName());
         } else {
-            System.out.println(prefix + "Document: " + entry.getFileName());
+            System.out.println(prefix + "-Document: " + entry.getFileName());
         }
     }
 }
