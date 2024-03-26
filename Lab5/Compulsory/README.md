@@ -1,91 +1,91 @@
-Director: 1
+>Director: 1
+  -Document: jdk-19.0.2_windows-x64_bin.exe
 
-  Document: jdk-19.0.2_windows-x64_bin.exe
+  -Document: projects assignment1.zip
   
-  Document: projects assignment1.zip
+  -Document: Tema 1.pdf
   
-  Document: Tema 1.pdf
+  >Director: TEST
   
-  Director: TEST
+  -Document: Tema 1.pdf
   
-   Document: Tema 1.pdf
-    
-   Document: test.txt
-    
-   Document: Untitled.png
+  -Document: test.txt
   
-  Document: test.txt
+  -Document: Untitled.png
   
-  Document: Untitled.png
+  -Document: test.txt
+  
+  -Document: Untitled.png
 
-Director: 2
+>Director: 2
 
-  Document: jdk-19.0.2_windows-x64_bin.exe
-  
-  Document: projects assignment1.zip
-  
-  Document: Tema 1.pdf
-  
-  Document: test.txt
-  
-  Document: Untitled.png
-
-Director: 3
-
-  Document: jdk-19.0.2_windows-x64_bin.exe
-  
-  Document: projects assignment1.zip
-  
-  Document: Tema 1.pdf
-  
-  Document: test.txt
-  
-  Document: Untitled.png
-
-Director: 4
-  
-  Document: jdk-19.0.2_windows-x64_bin.exe
-
-  Document: projects assignment1.zip
-  
-  Document: Tema 1.pdf
-  
-  Document: test.txt
-  
-  Document: Untitled.png
-
-Director: 5
+-Document: jdk-19.0.2_windows-x64_bin.exe
  
-  Document: jdk-19.0.2_windows-x64_bin.exe
+  -Document: projects assignment1.zip
   
-  Document: projects assignment1.zip
+  -Document: Tema 1.pdf
   
-  Document: Tema 1.pdf
+  -Document: test.txt
   
-  Document: test.txt
-  
-  Document: Untitled.png
+  -Document: Untitled.png
 
-Director: 6
+>Director: 3
 
-  Document: jdk-19.0.2_windows-x64_bin.exe
+  -Document: jdk-19.0.2_windows-x64_bin.exe
   
-  Document: projects assignment1.zip
+  -Document: projects assignment1.zip
   
-  Document: Tema 1.pdf
+  -Document: Tema 1.pdf
   
-  Document: test.txt
+  -Document: test.txt
   
-  Document: Untitled.png
+  -Document: Untitled.png
 
-Director: 7
+>Director: 4
 
-  Document: jdk-19.0.2_windows-x64_bin.exe
+  -Document: jdk-19.0.2_windows-x64_bin.exe
   
-  Document: projects assignment1.zip
+  -Document: projects assignment1.zip
   
-  Document: Tema 1.pdf
+  -Document: Tema 1.pdf
   
-  Document: test.txt
+  -Document: test.txt
   
-  Document: Untitled.png
+  -Document: Untitled.png
+
+>Director: 5
+
+  -Document: jdk-19.0.2_windows-x64_bin.exe
+  
+  -Document: projects assignment1.zip
+  
+  -Document: Tema 1.pdf
+  
+  
+  -Document: test.txt
+  
+  -Document: Untitled.png
+
+>Director: 6
+
+  -Document: jdk-19.0.2_windows-x64_bin.exe
+  
+  -Document: projects assignment1.zip
+  
+  -Document: Tema 1.pdf
+  
+  -Document: test.txt
+  
+  -Document: Untitled.png
+
+>Director: 7
+
+  -Document: jdk-19.0.2_windows-x64_bin.exe
+  
+  -Document: projects assignment1.zip
+  
+  -Document: Tema 1.pdf
+  
+  -Document: test.txt
+  
+  -Document: Untitled.png
