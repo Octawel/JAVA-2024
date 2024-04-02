@@ -1,37 +1,40 @@
 package Homework;
 
-import freemarker.template.Configuration;
-import freemarker.template.Template;
-import freemarker.template.TemplateException;
-import freemarker.template.Version;
+import freemarker.template.*;
 import java.awt.Desktop;
+import java.io.*;
+import java.nio.file.*;
+import java.util.*;
 import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
-import java.util.HashMap;
-import java.util.Map;
+import java.io.FileOutputStream;
+
 
 public class ReportCommand implements Command {
     @Override
     public void execute(String[] args) throws Exception {
-        Configuration cfg = new Configuration(new Version("2.3.31"));
+        // Step 1: Load and configure FreeMarker
+        Configuration cfg = new Configuration(Configuration.VERSION_2_3_31);
         cfg.setClassForTemplateLoading(ReportCommand.class, "/");
         cfg.setDefaultEncoding("UTF-8");
+        cfg.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
+        cfg.setLogTemplateExceptions(false);
+        cfg.setWrapUncheckedExceptions(true);
+        cfg.setFallbackOnNullLoopVariable(false);
 
-        Template template = cfg.getTemplate("reportTemplate.ftl");
+        // Step 2: Prepare data model
+        DirectoryReader directoryReader = new DirectoryReader();
+        List<Folder> listOfFolders = directoryReader.readDirectoryStructure(Paths.get("D:\\facultate\\3E4-2\\Java\\Lab5\\MasterDirectory"));
+        Map<String, Object> root = new HashMap<>();
+        root.put("folders", listOfFolders);
 
-        Map<String, Object> templateData = new HashMap<>();
-        templateData.put("message", "This is a test report.");
-
-        File reportFile = File.createTempFile("report", ".html");
-        try (Writer fileWriter = new FileWriter(reportFile)) {
-            template.process(templateData, fileWriter);
-        } catch (TemplateException | IOException e) {
-            e.printStackTrace();
+        // Step 3: Generate report
+        Template temp = cfg.getTemplate("reportTemplate.ftl");
+        File reportFile = new File("report.html"); // Output file
+        try (Writer out = new OutputStreamWriter(new FileOutputStream(reportFile))) {
+            temp.process(root, out);
         }
 
+        // Step 4: Open report in default browser
         Desktop.getDesktop().browse(reportFile.toURI());
     }
 }
-
