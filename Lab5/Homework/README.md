@@ -1,6 +1,6 @@
 Terminal:
 
-![image](https://github.com/Octawel/JAVA-2024/assets/95048266/dbc2519d-d457-4e8c-96d1-fec091758307)
+![image](https://github.com/Octawel/JAVA-2024/assets/95048266/aecd96eb-4446-49ee-90d7-742fa15c47cc)
 
 View:
 
