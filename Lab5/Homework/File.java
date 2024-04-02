@@ -2,14 +2,12 @@ package Homework;
 
 public class File {
     private String name;
-    private long size; // Size in bytes
-    private String lastModified; // Consider using a more appropriate data type like LocalDateTime
+    private long size;
+    private String lastModified;
 
-    // Constructor
     public File() {
     }
 
-    // Getters and setters
     public String getName() {
         return name;
     }

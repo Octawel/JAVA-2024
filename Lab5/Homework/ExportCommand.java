@@ -2,22 +2,22 @@ package Homework;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
+import java.nio.file.Paths;
+import java.util.List;
 
 public class ExportCommand implements Command {
+    private static final String MASTER_DIRECTORY_PATH = "D:\\facultate\\3E4-2\\Java\\Lab5\\MasterDirectory";
+
     @Override
     public void execute(String[] args) throws Exception {
-        if (args.length < 1) {
-            throw new IllegalArgumentException("No output file specified.");
-        }
-        Map<String, Object> data = new HashMap<>();
-        data.put("message", "This is a JSON export.");
+        DirectoryReader directoryReader = new DirectoryReader();
+        List<Folder> listOfFolders = directoryReader.readDirectoryStructure(Paths.get(MASTER_DIRECTORY_PATH));
 
         ObjectMapper mapper = new ObjectMapper();
-        mapper.writeValue(new File(args[0]), data);
+        String jsonOutputPath = args.length > 0 ? args[0] : "masterDirectory.json";
+        mapper.writeValue(new File(jsonOutputPath), listOfFolders);
 
-        System.out.println("Data exported to " + args[0]);
+        System.out.println("Repository exported to JSON in " + jsonOutputPath);
     }
 }
 
