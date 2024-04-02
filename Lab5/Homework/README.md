@@ -8,7 +8,7 @@ View:
 
 Report:
 
-![image](https://github.com/Octawel/JAVA-2024/assets/95048266/f23ea863-259e-4c4c-8a3e-1fcd177bd3b2)
+![image](https://github.com/Octawel/JAVA-2024/assets/95048266/fe17de40-7549-4b6a-b261-201c63df21f9)
 
 Export:
 
