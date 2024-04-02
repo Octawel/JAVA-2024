@@ -1,6 +1,6 @@
 Terminal:
 
-![image](https://github.com/Octawel/JAVA-2024/assets/95048266/3a5e3473-fe09-40af-831d-e7f4282b9937)
+![image](https://github.com/Octawel/JAVA-2024/assets/95048266/dbc2519d-d457-4e8c-96d1-fec091758307)
 
 View:
 
@@ -12,7 +12,6 @@ Report:
 
 Export:
 
-![image](https://github.com/Octawel/JAVA-2024/assets/95048266/61a7959a-070f-41e3-9c73-15c272037c67)
-
+![image](https://github.com/Octawel/JAVA-2024/assets/95048266/d9ce49d3-be9d-4c8e-ad41-79afe310ee83)
 
 
