@@ -1,36 +1,46 @@
 package Compulsory;
 
-import javax.swing.*;
-import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.Spinner;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
-public class ConfigPanel extends JPanel {
-    private final JTextField gridSizeField;
-    private final JButton newGameButton;
-    private final GameFrame frame;
+public class ConfigPanel extends VBox {
+    private Spinner<Integer> gridWidthSpinner;
+    private Spinner<Integer> gridHeightSpinner;
+    private Button newGameButton;
 
-    public ConfigPanel(GameFrame frame) {
-        this.frame = frame;
-        setLayout(new FlowLayout(FlowLayout.CENTER));
-        add(new JLabel("Grid size:"));
-        gridSizeField = new JTextField("10", 5);
-        add(gridSizeField);
-        newGameButton = new JButton("Create");
-        newGameButton.addActionListener(new NewGameAction());
-        add(newGameButton);
+    public ConfigPanel() {
+        Label gridWidthLabel = new Label("Grid width:");
+        gridWidthSpinner = new Spinner<>(3, 20, 10);
+        gridWidthSpinner.setEditable(true);
+
+        Label gridHeightLabel = new Label("Grid height:");
+        gridHeightSpinner = new Spinner<>(3, 20, 10);
+        gridHeightSpinner.setEditable(true);
+
+        newGameButton = new Button("Create");
+
+        HBox inputs = new HBox(10);
+        inputs.getChildren().addAll(gridWidthLabel, gridWidthSpinner, gridHeightLabel, gridHeightSpinner);
+        inputs.setAlignment(Pos.CENTER);
+
+        this.setAlignment(Pos.CENTER);
+        this.setSpacing(5);
+        this.getChildren().addAll(inputs, newGameButton);
     }
 
-    private class NewGameAction implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            try {
-                int gridSize = Integer.parseInt(gridSizeField.getText());
-                frame.getCanvas().setGridSize(gridSize);
-                frame.getCanvas().repaint();
-            } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(null, "Please enter a valid number for the grid size.");
-            }
-        }
+    public Spinner<Integer> getGridWidthSpinner() {
+        return gridWidthSpinner;
+    }
+
+    public Spinner<Integer> getGridHeightSpinner() {
+        return gridHeightSpinner;
+    }
+
+    public Button getNewGameButton() {
+        return newGameButton;
     }
 }
