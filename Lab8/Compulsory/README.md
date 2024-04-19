@@ -1,3 +1,3 @@
-![image](https://github.com/Octawel/JAVA-2024/assets/95048266/855b5e17-435a-493d-81f5-b55152f889fa)
+![image](https://github.com/Octawel/JAVA-2024/assets/95048266/b4588eed-2098-42c8-a509-c2ed504f98f6)
 
-![image](https://github.com/Octawel/JAVA-2024/assets/95048266/4ae18f18-fff6-48b0-a39c-b5d46a0a78e9)
+![image](https://github.com/Octawel/JAVA-2024/assets/95048266/132888c4-d5a9-409d-bf1a-217c42a87d91)
