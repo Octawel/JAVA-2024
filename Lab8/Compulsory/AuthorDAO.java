@@ -22,7 +22,7 @@ public class AuthorDAO {
     }
 
     public void listAuthors() throws SQLException {
-        String query = "SELECT * FROM Authors ORDER BY author_id";  // Added ORDER BY clause here
+        String query = "SELECT * FROM Authors ORDER BY author_id";
         try (PreparedStatement statement = connection.prepareStatement(query);
              ResultSet resultSet = statement.executeQuery()) {
             while (resultSet.next()) {
