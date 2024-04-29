@@ -21,7 +21,11 @@ public class BookDAO {
     }
 
     public void listBooks() throws SQLException {
-        String query = "SELECT b.book_id, b.title, b.language, b.pub_date, b.num_pages, a.name as author_name, a.country as author_country FROM Books b INNER JOIN Authors a ON b.author_id = a.author_id";
+        String query = "SELECT b.book_id, b.title, b.language, b.pub_date, b.num_pages, a.name as author_name, a.country as author_country " +
+                "FROM Books b " +
+                "INNER JOIN Authors a ON b.author_id = a.author_id " +
+                "ORDER BY b.book_id ASC";
+
         try (Connection conn = DataSource.getConnection();
              PreparedStatement statement = conn.prepareStatement(query);
              ResultSet resultSet = statement.executeQuery()) {
